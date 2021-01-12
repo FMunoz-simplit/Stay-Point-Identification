@@ -57,13 +57,13 @@ def rad(d):
 #根据经纬度计算两点距离的函数，输出单位是米
 EARTH_RADIUS=6378.137
 def GetDistance(lng1,lat1,lng2,lat2):
-    radLat1 = rad(lat1);
-    radLat2 = rad(lat2);
-    a = radLat1 - radLat2;
-    b = rad(lng1) - rad(lng2);
+    radLat1 = rad(lat1)
+    radLat2 = rad(lat2)
+    a = radLat1 - radLat2
+    b = rad(lng1) - rad(lng2)
     s = 2 * math.asin(math.sqrt(math.pow(math.sin(a/2),2) +math.cos(radLat1)*math.cos(radLat2)*math.pow(math.sin(b/2),2)))
-    s = s * EARTH_RADIUS;
-    s = round(s * 10000,2) / 10;
+    s = s * EARTH_RADIUS
+    s = round(s * 10000,2) / 10
     return s
 
 #计算中心点的函数,返回中心点的经纬度,data是DataFrame格式的数据集，i，j是位置，i<j
